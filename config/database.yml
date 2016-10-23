@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: ''
+  password: ''
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: db/alina_dev
+
+test:
+  <<: *default
+  database: db/alina_test
+
+production:
+  <<: *default
+  database: db/alina
