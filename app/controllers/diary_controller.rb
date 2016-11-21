@@ -1,4 +1,6 @@
 class DiaryController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @content = Post.render
   end
