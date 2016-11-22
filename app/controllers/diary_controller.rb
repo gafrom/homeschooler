@@ -1,21 +1,5 @@
-class DiaryController < ApplicationController
-  before_action :authenticate_user!
-
+class DiaryController < InternalController
   def show
-    @content = Post.render
-  end
-
-  def edit
-    @post = Post.take
-  end
-
-  def update
-    @post = Post.take
-
-    if @post.update body: params[:post]
-      head :ok
-    else
-      head 412
-    end
+    @posts = Post.authored_by current_user
   end
 end

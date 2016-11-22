@@ -1,0 +1,5 @@
+.diary-container
+  %h1= "Заметка №#{@post.id}, #{@user.name || @user.email}"
+  = link_to 'Просмотр', @post, class: 'icon-rocket'
+  .diary-wrapper
+    %textarea#diary= @post.body

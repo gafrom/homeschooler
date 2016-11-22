@@ -1,0 +1,5 @@
+.diary-container
+  %h1= "Заметка №#{@post.id}, #{@user.name || @user.email}"
+  = link_to 'Редактировать', edit_post_path(@post), class: 'icon-pencil'
+  .diary-wrapper
+    #diary= @content.html_safe

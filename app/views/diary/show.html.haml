@@ -1,5 +1,5 @@
 .diary-container
-  %h1 Маль, какой заголовок здесь написать?
-  = link_to 'Редактировать', edit_diary_path, class: 'icon-pencil'
-  .diary-wrapper
-    #diary= @content.html_safe
+  %h1= "Все Ваши заметки, #{@user.name || @user.email}"
+  %br
+  %p= link_to 'Создать новую', new_post_path
+  %ul= render @posts
