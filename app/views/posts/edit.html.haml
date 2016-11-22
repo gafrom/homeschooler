@@ -1,5 +1,6 @@
 .diary-container
-  %h1= "Заметка №#{@post.id}, #{@user.name || @user.email}"
+  = "Заметка №#{@post.id}, #{@user.name || @user.email}"
   = link_to 'Просмотр', @post, class: 'icon-rocket'
+  = link_to 'Назад ко списку', root_path, class: 'icon-tasks'
   .diary-wrapper
-    %textarea#diary= @post.body
+    %textarea#diary{ data: { id: @post.id } }= @post.body

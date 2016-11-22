@@ -1,5 +1,5 @@
 .diary-container
   %h1= "Все Ваши заметки, #{@user.name || @user.email}"
   %br
-  %p= link_to 'Создать новую', new_post_path
+  %p= link_to 'Создать новую', new_post_path, class: 'icon-plus-circled'
   %ul= render @posts

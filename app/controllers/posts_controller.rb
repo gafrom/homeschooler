@@ -1,12 +1,9 @@
 class PostsController < InternalController
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def new
-    @post = Post.create
-  end
-
-  def create
-    @post = Post.create post_params
+    @post = Post.create(user: current_user)
+    redirect_to edit_post_path(@post)
   end
 
   def show
@@ -24,6 +21,12 @@ class PostsController < InternalController
     end
   end
 
+  def destroy
+    @post.delete
+
+    redirect_to root_path
+  end
+
   private
 
   def post_params
@@ -31,6 +34,6 @@ class PostsController < InternalController
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post ||= Post.find(params[:id])
   end
 end

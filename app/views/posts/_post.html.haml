@@ -1,0 +1,4 @@
+%li
+  = link_to truncate(post.body), post
+  = link_to '', post, method: :delete, class: 'li-post icon-trash', data: { confirm: 'Действие не может быть отменено. Удалить заметку?' }
+  %span.post-date= post.created_at.strftime('%-d %b, %Y')

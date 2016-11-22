@@ -1,9 +1,10 @@
 class @App.Backend
   constructor: ->
 
-  update: (post_text) =>
-    $.ajax '/diary',
+  update: (post_text, id) =>
+    $.ajax "/posts/#{id}",
       type: 'PATCH'
       dataType: 'text'
       data:
-        post: post_text
+        post:
+          body: post_text

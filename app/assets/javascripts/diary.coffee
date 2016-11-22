@@ -4,5 +4,5 @@ class @App.Diary
   watchTyping: =>
     @textarea = $('#diary')
     @textarea.on 'input', (e) =>
-      @backend.update(e.target.value)
+      @backend.update(e.target.value, e.target.getAttribute('data-id'))
         .done((data) -> console.log "success", data)

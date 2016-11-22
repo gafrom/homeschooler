@@ -12,9 +12,17 @@
   a {
     text-decoration: none;
     color: grey;
+    padding-left: 2em;
     &::before { color: pink; }
     &:hover {
       &::before { color: red; }
     }
+    &.li-post {
+      padding-left: 0;
+    }
+  }
+  span.post-date {
+    color: #b5d7d8;
+    font-style: italic;
   }
 }

@@ -13,8 +13,10 @@ class Post < ApplicationRecord
   belongs_to :user
 
   scope :authored_by, -> (user) { where(user: user) }
+  default_scope -> { order(created_at: :desc) }
 
   def render
+    return '' unless body
     # Initializes a Markdown parser
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
 
