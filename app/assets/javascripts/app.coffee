@@ -8,6 +8,8 @@ class @App
   start: =>
     $(document).on 'turbolinks:load', =>
       @diary.watchTyping()
+      @diary.watchClicks()
+
 
 $ ->
   app = new App()

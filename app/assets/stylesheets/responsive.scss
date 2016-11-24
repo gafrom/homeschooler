@@ -1,0 +1,12 @@
+@media screen and (max-width: 767px) {
+    .container {  width: 100%;  padding: 0 10px;}
+    .menu {  text-align: center;}
+    .diary-container > h1 {  font-size: 40px;  }
+}
+
+@media screen and (max-width: 480px) {
+    .menu {  font-size: 11px;}
+    .diary-container a {  padding-left: 5px;}
+    .diary-container > h1 {  font-size: 30px;  }
+    .show_list {  padding-left: 0;}
+}
