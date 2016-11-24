@@ -28,4 +28,7 @@ class User < ApplicationRecord
   
   enum gender: { male: 0, female: 1 }
 
+  def name_or_email
+    name.blank? ? email : name
+  end
 end
