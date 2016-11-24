@@ -1,6 +1,6 @@
 .diary-container
   .menu.close
-    = "Заметка №#{@post.id}, #{@user.name || @user.email}"
+    = "Заметка от #{@post.created_at.strftime('%-d %b, %Y')}"
     = link_to 'Редактировать', edit_post_path(@post), class: 'icon-pencil'
     = link_to 'Назад ко списку', root_path, class: 'icon-tasks'
   .close_btn.icon-cancel-squared

@@ -9,7 +9,7 @@ All sorts of markdown buns are available.
 
 ## Adaptiveness
 
-Notes look great on any screens - from mobile to desktop.
+Thanks to [Yana](https://github.com/YanaKotenko), notes now look great on any screens - from mobile to desktop.
 
 ## Presentation
 

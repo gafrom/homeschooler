@@ -1,6 +1,6 @@
 .diary-container
   .menu
-    = "Заметка №#{@post.id}, #{@user.name || @user.email}"
+    = "Заметка от #{@post.created_at.strftime('%-d %b, %Y')}"
     = link_to 'Просмотр', @post, class: 'icon-rocket'
     = link_to 'Назад ко списку', root_path, class: 'icon-tasks'
   .diary-wrapper
