@@ -1,6 +1,8 @@
 .diary-container
-  = "Заметка №#{@post.id}, #{@user.name || @user.email}"
-  = link_to 'Редактировать', edit_post_path(@post), class: 'icon-pencil'
-  = link_to 'Назад ко списку', root_path, class: 'icon-tasks'
+  .menu.close
+    = "Заметка №#{@post.id}, #{@user.name || @user.email}"
+    = link_to 'Редактировать', edit_post_path(@post), class: 'icon-pencil'
+    = link_to 'Назад ко списку', root_path, class: 'icon-tasks'
+  .close_btn.icon-cancel-squared
   .diary-wrapper
     #diary= @content.html_safe
