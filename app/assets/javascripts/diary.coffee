@@ -13,6 +13,5 @@ class @App.Diary
     btn.on 'click', (e) =>
       menu = $('.menu.close')
       menu.slideToggle()
-      btn.toggleClass('icon-cancel-squared')
-      btn.toggleClass('icon-rocket')
-#      menu.css 'display','none'
+      btn.toggleClass 'icon-cancel-squared'
+      btn.toggleClass 'icon-menu'
