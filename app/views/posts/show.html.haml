@@ -1,8 +1,9 @@
 .diary-container
-  .menu.close
-    = "Заметка от #{@post.created_at.strftime('%-d %b, %Y')}"
-    = link_to 'Редактировать', edit_post_path(@post), class: 'icon-pencil'
-    = link_to 'Назад ко списку', root_path, class: 'icon-tasks'
-  .close_btn.icon-cancel-squared
+  - if user_signed_in?
+    .menu.close
+      = "Заметка от #{@post.created_at.strftime('%-d %b, %Y')}"
+      = link_to 'Редактировать', edit_post_path(@post), class: 'icon-pencil'
+      = link_to 'Назад ко списку', root_path, class: 'icon-tasks'
+    .close_btn.icon-cancel-squared
   .diary-wrapper
     #diary= @content.html_safe
