@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   root 'diary#show'
 
-  resources :posts, except: :index
+  namespace :public, path: '' do
+    resources :posts, only: :show
+  end
+  resources :posts, except: [:index, :show]
 end
