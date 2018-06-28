@@ -2,6 +2,7 @@
   .menu
     = "Заметка от #{@post.created_at.strftime('%-d %b, %Y')}"
     = link_to 'Просмотр', @post, class: 'icon-rocket'
+    = link_to 'Share', post_path(@post, post: { status: (@post.status + 1) % 2 }), class: @post.visible? ? 'icon-check' : 'icon-check-empty', method: :patch, remote: true
     = link_to 'Назад ко списку', root_path, class: 'icon-tasks'
   .diary-wrapper
     %textarea#diary{ data: { id: @post.id } }= @post.body
